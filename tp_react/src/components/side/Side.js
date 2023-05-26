@@ -25,6 +25,9 @@ function Side() {
       <ListGroup.Item action variant="warning">
         <Link to="/non_admis">Non admis</Link>
       </ListGroup.Item>
+      <ListGroup.Item action variant="secondary">
+        <Link to="/formation">Formation</Link>
+      </ListGroup.Item>
       </ListGroup>
     </div>
   )

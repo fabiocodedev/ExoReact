@@ -26,20 +26,25 @@ export class Admis extends Component {
           <th>Note</th>
         </tr>
       </thead>
-      <tbody >
-      {data.map(element => <>
-        if ({element.moyenne >= 10}) {
-          <tr >
-          <td>{element.firstname}</td>
-          <td>{element.lastname}</td>
-          <td>{element.moyenne} / 20</td>
-          </tr>
-        } else {
-            <p>AUCUN ETUDANTS ADMIS...</p>
-          }
-         </> )}
-      </tbody>
+      <tbody>
+          {data.map((element, index) => {
+            if (element.moyenne >= 12) {
+              return (
+                <tr key={index}>
+                  <td>{element.firstname}</td>
+                  <td>{element.lastname}</td>
+                  <td>{element.moyenne} / 20</td>
+                </tr>
+              );
+            } else {
+              return null;
+            }
+          })}
+        </tbody>
       </Table>
+      {data.filter((element) => element.moyenne >= 10).length === 0 && (
+        <p>AUCUN ETUDIANT ADMIS...</p>
+        )}
       </div>
       )
 }
